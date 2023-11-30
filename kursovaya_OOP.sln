@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kursovaya_OOP", "kursovaya_OOP\kursovaya_OOP.csproj", "{EAB004CD-2072-4887-A011-306027923A4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAB004CD-2072-4887-A011-306027923A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB004CD-2072-4887-A011-306027923A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB004CD-2072-4887-A011-306027923A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB004CD-2072-4887-A011-306027923A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD98FE4C-8E31-43C8-B256-3A634FE97E97}
+	EndGlobalSection
+EndGlobal

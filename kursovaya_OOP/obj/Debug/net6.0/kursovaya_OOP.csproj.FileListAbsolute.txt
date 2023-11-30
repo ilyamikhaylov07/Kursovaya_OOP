@@ -1,0 +1,14 @@
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.AssemblyInfoInputs.cache
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.AssemblyInfo.cs
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.csproj.CoreCompileInputs.cache
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\bin\Debug\net6.0\kursovaya_OOP.exe
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\bin\Debug\net6.0\kursovaya_OOP.deps.json
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\bin\Debug\net6.0\kursovaya_OOP.runtimeconfig.json
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\bin\Debug\net6.0\kursovaya_OOP.dll
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\bin\Debug\net6.0\kursovaya_OOP.pdb
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.dll
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\refint\kursovaya_OOP.dll
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.pdb
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\kursovaya_OOP.genruntimeconfig.cache
+C:\Users\Илья\source\repos\kursovaya_OOP\kursovaya_OOP\obj\Debug\net6.0\ref\kursovaya_OOP.dll
