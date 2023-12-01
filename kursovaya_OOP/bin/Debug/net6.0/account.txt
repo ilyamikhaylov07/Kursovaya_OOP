@@ -1,0 +1,2 @@
+Id:1, Сумма: 1000, Тип: PSAccount
+Id:2, Сумма: 200, Тип: PCAccount

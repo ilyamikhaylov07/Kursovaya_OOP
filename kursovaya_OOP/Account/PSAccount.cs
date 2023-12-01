@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace kursovaya_OOP.Account
 {
-    internal class PS_Account : Account // аккаунт для консолей, наследуется от абстрактного класса 
+    public class PSAccount : Account // аккаунт для консолей, наследуется от абстрактного класса 
     {
         public decimal ServiceCost {  get; set; } // стоимость 
-        public PS_Account(decimal sum,  decimal serviceCost) : base(sum) // конструктор, с наследуемой суммой от конструктора абстрактного класса
+        public PSAccount(decimal sum,  decimal serviceCost) : base(sum) // конструктор, с наследуемой суммой от конструктора абстрактного класса
         {
             ServiceCost = serviceCost;
         }

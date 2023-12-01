@@ -1,4 +1,7 @@
-﻿namespace kursovaya_OOP.Account;
+﻿using kursovaya_OOP;
+using System.IO;
+
+namespace kursovaya_OOP.Account;
 class Program
 {
     static void Main(string[] args)
@@ -34,6 +37,7 @@ class Program
                         Use(CyberV);
                         break;
                     case 4:
+                        SaveAccounts(CyberV.GetAccounts(), "account.txt");
                         work = 0;
                         continue;
                 }
@@ -44,7 +48,9 @@ class Program
             }
         }
     }
-
+    
+      
+  
     private static void SomeOpening(object sender, EventArgs e) // обработчик открытия счёта
     {
         Console.WriteLine(e.Message);
@@ -73,15 +79,15 @@ class Program
         int type = Convert.ToInt32(Console.ReadLine());
         if (type == 1)
         {
-            accountType = AccountType.PC_Account;
+            accountType = AccountType.PCAccount;
         }
         else if (type == 2)
         {
-            accountType = AccountType.PS_Account;
+            accountType = AccountType.PSAccount;
         }
         else
         {
-            accountType = AccountType.Food_Account;
+            accountType = AccountType.FoodAccount;
         }
         club.Start(accountType, sum, SomePuting, SomeUsingMoney, SomeOpening); // обработчики событий
 
@@ -120,6 +126,27 @@ class Program
         Console.WriteLine("Введите Id счета:");
         int id = Convert.ToInt32(Console.ReadLine());
         club.Put(sum, id);
+    }
+
+    private static void SaveAccounts(List<Account> accounts, string fileName) // Сохранение аккаунтов в файл
+    {
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                foreach (var account in accounts)
+                {
+                    writer.WriteLine($"Id:{account.Id}, Сумма: {account.Sum}, Тип: {account.GetType().Name}");
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Аккаунты успешно сохраны в файл {fileName}");
+            Console.ResetColor();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Произошла ошибка при сохранении аккаунта{ex.Message}");
+        }
     }
 
 }

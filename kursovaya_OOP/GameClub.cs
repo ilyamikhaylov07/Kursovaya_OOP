@@ -2,13 +2,13 @@
 {
     public enum AccountType // Перечисление видов аккаунта
     {
-        Food_Account,
-        PC_Account,
-        PS_Account
+        FoodAccount,
+        PCAccount,
+        PSAccount
     }
     public class GameClub<T> where T : Account // класс клуба, в котором прописан функционал, использующий тип ограничения аккаунт
     {
-        T[] accounts; // массив аккаунтов
+        private readonly List<T> accounts = new List<T>(); // массив аккаунтов
 
         public string Title { get; private set; } // название клуба
 
@@ -20,44 +20,38 @@
             this.Description = description;
         }
 
+      
         public void Start(AccountType account, decimal sum, // метод принимающий события
-            AccountHandler SomePuting,
-            AccountHandler SomeUsingMoney,
-            AccountHandler SomeOpening)
+            AccountHandler somePuting,
+            AccountHandler someUsingMoney,
+            AccountHandler someOpening)
         {
             T NewAccount = null;
 
             switch (account) // С помощью перечисления, в зависимости от того какой аккаунт создан, происходит создание нового объекта и на каждый счёт начисляется по 300 бонусов
             {
-                case AccountType.PC_Account:
-                    NewAccount = new PC_Account(sum, 150) as T; // Происходит преобразование от Т к указаному типу, если преобразование не удаётся, то значение будет null
+                case AccountType.PCAccount:
+                    NewAccount = new PCAccount(sum, 150) as T; // Происходит преобразование от Т к указаному типу, если преобразование не удаётся, то значение будет null
                     break;
-                case AccountType.PS_Account:
-                    NewAccount = new PS_Account(sum, 350) as T;
+                case AccountType.PSAccount:
+                    NewAccount = new PSAccount(sum, 350) as T;
                     break;
-                case AccountType.Food_Account:
-                    NewAccount = new Food_Account(sum, 100) as T;
+                case AccountType.FoodAccount:
+                    NewAccount = new FoodAccount(sum, 100) as T;
                     break;
             }
 
             if (NewAccount == null) // если преобразование не получилось, то значение null, идёт проверка, то тогда вбрасывается исключение
                 throw new Exception("Ошибка");
 
-            else if (accounts == null) // если массив пуст, то добавляется новый аккаунт
-                accounts = new T[] { NewAccount };
-            else
-            {
-                T[] values = new T[accounts.Length + 1]; // создаётся временный массив values
-                for (int i = 0; i < accounts.Length; i++) // идёт проходка по массиву accounts
-                    values[i] = accounts[i]; // идёт сдвиг аккаунта
-                values[accounts.Length - 1] = NewAccount; // и второму аккаунту присваивается значения
-                accounts = values;
+            else{
+                accounts.Add(NewAccount);
+                }
 
-            }
 
-            NewAccount.Puting += SomePuting; // установка обработчиков событий
-            NewAccount.UsingMoney += SomeUsingMoney;
-            NewAccount.Opening += SomeOpening;
+            NewAccount.Puting += somePuting; // установка обработчиков событий
+            NewAccount.UsingMoney += someUsingMoney;
+            NewAccount.Opening += someOpening;
 
             NewAccount.OpenOn();
         }
@@ -65,7 +59,7 @@
         //поиск счёта по id
         public T? Find_Id(int id)
         {
-            for (int i = 0; i < accounts.Length; i++)
+            for (int i = 0; i < accounts.Count; i++)
             {
                 if (accounts[i].Id == id) return accounts[i];
             }
@@ -94,13 +88,16 @@
         // Метод который возвращает последний, созданный аккаунт
         public T GetLastCreatedAccount() 
         {
-            if (accounts != null && accounts.Length > 0)
+            if (accounts != null && accounts.Count > 0)
             {
-                return accounts[accounts.Length - 1];
+                return accounts[accounts.Count - 1];
             }
-
             return null;
         }
 
+        public List<T> GetAccounts() // публичный метод для получения аккаунтов из приватного списка
+        {
+            return accounts;
+        }
     }
 }
